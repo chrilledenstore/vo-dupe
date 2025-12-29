@@ -1,0 +1,86 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Text from "../components/Text.astro";
+import Button from "../components/Button.astro";
+---
+
+<MainLayout title="Særlige behov">
+  <main class="mx-0 bg-neutral-50">
+    <section class="bg-blue-700 w-full px-4 py-40 lg:px-100 place-content-center bg-[url(/imggggg/wavepattern.svg)] bg-cover bg-center">
+      <a href="apply" class="mb-5"><img src="/icons/btnarrow.svg" alt="" width="30" class="-scale-x-100" /></a>
+      <article class="bg-neutral-50 p-10 rounded-lg mx-auto mt-2 flex flex-col gap-5">
+        <div class="mx-auto">
+          <ul class="steps font-body">
+            <li class="step step-secondary">Oplysninger</li>
+            <li class="step step-secondary">Beskrivelse</li>
+            <li class="step step-secondary">Særlige behov</li>
+            <li class="step">Godkendelse</li>
+          </ul>
+        </div>
+        <div class="font-body flex flex-col gap-4 mt-5 px-4">
+          <Text font="body" type="normal"><div class="text-base">Har du brug for særlige behov eller andet så angiv venligst dette.</div></Text>
+          <label class="label text-neutral-900">
+            <input type="checkbox" class="checkbox checkbox-secondary" />
+            Servicehund
+          </label>
+          <label class="label text-neutral-900">
+            <input type="checkbox" class="checkbox checkbox-secondary" />
+            Allergener
+          </label>
+          <label class="label text-neutral-900">
+            <input type="checkbox" class="checkbox checkbox-secondary" />
+            Afhentning ved Aalborg banegård
+          </label>
+          <label class="label text-neutral-900">
+            <input id="andet" type="checkbox" class="checkbox checkbox-secondary" />
+            Andet
+          </label>
+        </div>
+
+        <div id="andetcontainer">
+          <textarea class="textarea rounded-md w-full" placeholder="Skriv tekst her..."></textarea>
+        </div>
+        <div class="flex justify-between mt-5">
+          <Button size="small" color="orange" blink="/steptwo" arrowback="yes">Tilbage</Button>
+          <Button size="small" color="orange" blink="/stepfour" arrow="yes">Næste</Button>
+        </div>
+      </article>
+    </section>
+  </main>
+</MainLayout>
+
+<style>
+  /* Smooth reveal for the textarea container */
+  #andetcontainer {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition:
+      max-height 320ms ease,
+      opacity 220ms ease;
+  }
+  #andetcontainer.visible {
+    max-height: 400px; /* large enough for the textarea */
+    opacity: 1;
+  }
+</style>
+
+<script type="module">
+  const andetCheckbox = document.getElementById("andet");
+  const andetContainer = document.getElementById("andetcontainer");
+
+  if (andetCheckbox && andetContainer) {
+    const updateVisibility = () => {
+      if (andetCheckbox.checked) {
+        andetContainer.classList.add("visible");
+        andetContainer.setAttribute("aria-hidden", "false");
+      } else {
+        andetContainer.classList.remove("visible");
+        andetContainer.setAttribute("aria-hidden", "true");
+      }
+    };
+
+    andetCheckbox.addEventListener("change", updateVisibility);
+    updateVisibility();
+  }
+</script>

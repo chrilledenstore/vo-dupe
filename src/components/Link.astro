@@ -1,6 +1,10 @@
 ---
 // Henter parametrene fra Astro.props
-const { href = "#", target = "_self", underline = "yes" } = Astro.props;
+let { href = "#", target = "_self", underline = "yes" } = Astro.props;
+// Ensure internal links are root-relative
+if (href && !href.startsWith("http") && !href.startsWith("/")) {
+  href = "/" + href;
+}
 
 //Definer den styling (Tailwind classes, der gør sig gældende for alle links
 const linkStyling = "font-body text-sm lg:text-md hover:font-bold transition-all duration-200";

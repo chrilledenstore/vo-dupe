@@ -1,27 +1,111 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 
-import Heading from "../components/Heading.astro";
-import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 ---
 
-<MainLayout title="Veteranoasen">
+<MainLayout title="Oplysninger">
   <main class="mx-0 bg-neutral-50">
-    <section class="bg-blue-700 w-full h-200 place-content-center">
-      <article class="bg-neutral-50 p-10 rounded-mb">
-        <ul class="steps">
-          <li class="step step-secondary">Register</li>
-          <li class="step">Choose plan</li>
-          <li class="step">Purchase</li>
-          <li class="step">Receive Product</li>
-        </ul>
+    <section class="bg-blue-700 w-full px-4 py-40 lg:px-100 place-content-center bg-[url(/imggggg/wavepattern.svg)] bg-cover bg-center">
+      <a href="apply" class="mb-5"><img src="/icons/btnarrow.svg" alt="" width="30" class="-scale-x-100" /></a>
+      <article class="bg-neutral-50 p-10 rounded-lg mx-auto mt-2 flex flex-col gap-5">
+        <div class="mx-auto">
+          <ul class="steps font-body">
+            <li class="step step-secondary">Oplysninger</li>
+            <li class="step">Beskrivelse</li>
+            <li class="step">Særlige behov</li>
+            <li class="step">Godkendelse</li>
+          </ul>
+        </div>
+        <div class="font-body flex flex-col gap-4 mt-5">
+          <label for="people">Antal deltagere</label>
+          <select id="people" class="select">
+            <option disabled selected>Angiv antal deltagere</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+          <div id="inputcontainer" class="flex flex-col gap-4"></div>
+        </div>
+        <div class="flex justify-end mt-5">
+          <Button size="small" color="orange" blink="/steptwo" arrow="yes">Næste</Button>
+        </div>
       </article>
     </section>
   </main>
 </MainLayout>
 
-<script>
-  /* Import af Motion One bibliotek */
-  import { animate, stagger, inView, scroll } from "motion";
+<script type="module">
+  const peopleSelect = document.getElementById("people");
+  const container = document.getElementById("inputcontainer");
+
+  function createLabeledInput({ id, name, labelText, type = "text", placeholder = "", attrs = {} }) {
+    const wrap = document.createElement("div");
+    wrap.className = "flex flex-col gap-1";
+
+    const label = document.createElement("label");
+    label.htmlFor = id;
+    label.className = "font-body text-sm";
+    label.textContent = labelText;
+
+    const input = document.createElement("input");
+    input.type = type;
+    input.id = id;
+    input.name = name;
+    input.placeholder = placeholder;
+    input.className = "input";
+
+    Object.entries(attrs).forEach(([k, v]) => input.setAttribute(k, v));
+
+    if (type === "number") {
+      input.inputMode = "numeric";
+      input.pattern = "\\d*";
+      input.addEventListener("input", (ev) => {
+        const cleaned = ev.target.value.replace(/[^0-9]/g, "");
+        if (ev.target.value !== cleaned) ev.target.value = cleaned;
+      });
+    }
+
+    wrap.appendChild(label);
+    wrap.appendChild(input);
+    return wrap;
+  }
+
+  function renderInputs(n) {
+    container.innerHTML = "";
+    for (let i = 1; i <= n; i++) {
+      const row = document.createElement("div");
+      row.className = "grid grid-cols-2 gap-4 items-start";
+
+      row.appendChild(
+        createLabeledInput({
+          id: `participant-${i}-name`,
+          name: `participant-${i}-name`,
+          labelText: `Navn på deltager ${i}`,
+          placeholder: "Indtast navn",
+          type: "text",
+        })
+      );
+
+      row.appendChild(
+        createLabeledInput({
+          id: `participant-${i}-age`,
+          name: `participant-${i}-age`,
+          labelText: "Alder",
+          placeholder: "Alder",
+          type: "number",
+          attrs: { min: "0", max: "120", step: "1" },
+        })
+      );
+
+      container.appendChild(row);
+    }
+  }
+
+  peopleSelect.addEventListener("change", (e) => {
+    const value = parseInt(e.target.value, 10);
+    if (Number.isInteger(value) && value > 0) renderInputs(value);
+    else container.innerHTML = "";
+  });
 </script>

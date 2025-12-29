@@ -1,7 +1,7 @@
 ---
-import Link from "./Link.astro";
 import Heading from "./Heading.astro";
 import Button from "./Button.astro";
+import Link from "./Link.astro";
 
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
@@ -21,13 +21,11 @@ const currentPath = pathname.slice(1); // remove the first "/"
     </div>
     <nav id="desktopmenu" class="hidden lg:block">
       <ul class="flex flex-row gap-5">
-        <li class="">
-          <li class="text-center py-2"><Link href="/" underline="no">Forside</Link></li>
-          <li class="text-center py-2"><Link href="about" underline="no">Om os</Link></li>
-          <li class="text-center py-2"><Link href="apply" underline="no">Ansøg</Link></li>
-          <li class="text-center py-2"><Link href="komponentbibliotek" underline="no">Komponentbibliotek</Link></li>
-        </li>
-        <li><Button color="orange" size="small" blink="/donate">Støt os!</Button></li>
+          <li class="text-center py-2 hover:font-bold"><Link href="/" underline="no" class:list={[currentPath === "" ? "font-bold underline" : ""]}>Forside</Link></li>
+          <li class="text-center py-2 hover:font-bold"><Link href="/about" underline="no" class:list={[currentPath === "about" ? "font-bold underline" : ""]}>Om os</Link></li>
+          <li class="text-center py-2 hover:font-bold"><Link href="/apply" underline="no" class:list={[currentPath === "apply" ? "font-bold underline" : ""]}>Ansøg</Link></li>
+          <li class="text-center py-2 hover:font-bold"><Link href="/komponentbibliotek" underline="no" class:list={[currentPath === "komponentbibliotek" ? "font-bold underline" : ""]}>Komponentbibliotek</Link></li>
+        <li><Button color="orange" size="small" blink="/donation">Støt os!</Button></li>
       </ul>
       <!-- DESKTOP MENU SLUT -->
 
@@ -41,11 +39,11 @@ const currentPath = pathname.slice(1); // remove the first "/"
   </div>
   <nav id="mobilmenu" class="flex flex-col content-center" x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
     <ul class="pb-5">
-      <li class="text-center py-4"><Link href="/" underline="no">Forside</Link></li>
-      <li class="text-center py-4"><Link href="about" underline="no">Om os</Link></li>
-      <li class="text-center py-4"><Link href="apply" underline="no">Ansøg</Link></li>
-      <li class="text-center py-4"><Link href="komponentbibliotek" underline="no">Komponentbibliotek</Link></li>
-      <li class="text-center py-4"><Button color="orange" size="small" blink="/donate">Støt os!</Button></li>
+        <li class="text-center py-4 hover:font-bold"><Link href="/" underline="no" class:list={[currentPath === "" ? "font-bold underline" : ""]}>Forside</Link></li>
+        <li class="text-center py-4 hover:font-bold"><Link href="/about" underline="no" class:list={[currentPath === "about" ? "font-bold underline" : ""]}>Om os</Link></li>
+        <li class="text-center py-4 hover:font-bold"><Link href="/apply" underline="no" class:list={[currentPath === "apply" ? "font-bold underline" : ""]}>Ansøg</Link></li>
+        <li class="text-center py-4 hover:font-bold"><Link href="/komponentbibliotek" underline="no" class:list={[currentPath === "komponentbibliotek" ? "font-bold underline" : ""]}>Komponentbibliotek</Link></li>
+      <li class="text-center py-4"><Button color="orange" size="small" blink="/donation">Støt os!</Button></li>
     </ul>
   </nav>
 </header>

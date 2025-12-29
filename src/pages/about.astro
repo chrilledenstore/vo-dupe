@@ -6,13 +6,205 @@ import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 ---
 
-<MainLayout title="Titel">
-  <main class="container mx-auto p-4">
-    <Heading htmlheading="h1">VETERANOASEN OH YEAH BABY OH YEAH</Heading>
+<MainLayout title="Om os">
+  <main class="mx-auto">
+    <section class="relative bg-blue-700 bg-[url('/imggggg/wavepattern.svg')] bg-no-repeat bg-bottom bg-cover pl-5 pt-5 h-75 lg:h-100 x-overflow-hidden">
+      <img src="/illust/community.svg" alt="About header image" class="w-103 h-auto object-cover mt-5 -ml-15 lg:w-150 lg:m-auto" />
+    </section>
+
+    <section id="aboutUs" class="md:grid grid-cols-2 max-w-7xl my-10 m-auto lg:my-30 opacity-0 transition-opacity duration-700">
+      <div class="my-auto order-1 md:order-none p-5">
+        <img src="/imggggg/kidswithdads.webp" alt="kids with 2 dads" />
+      </div>
+      <article class="order-2 md:order-none">
+        <div class="mt-5 ml-5 max-w-3xl space-y-4 lg:mt-0">
+          <Heading htmlheading="h1" size="large" font="display" class="text-white">Om os</Heading>
+          <Text font="body" type="normal"
+            >Sommerlejren bliver til i et varmt samarbejde mellem KFUM’s Soldatermission, VeteranOasen og en gruppe engagerede frivillige, der alle brænder for at skabe et trygt fristed for veteraner og deres familier.</Text
+          >
+          <Text font="body" type="normal">Vi gør det, fordi vi ved, hvor meget et pusterum kan betyde. Et sted, hvor man kan trække vejret, finde ro og være sammen med andre, der forstår – uden at skulle forklare noget.</Text>
+          <Text font="body" type="normal"
+            >KFUM bidrager med hjemlige rammer og mange års erfaring, mens VeteranOasen bringer hjerte, fællesskab og indsigt fra veteraner selv. Frivillige binder det hele sammen med nærvær, omsorg og praktisk hjælp.</Text
+          >
+          <Text font="body" type="normal">Sammen skaber vi nogle dage, hvor I kan slappe af, være jer selv og mærke, at I ikke står alene.</Text>
+        </div>
+      </article>
+    </section>
+
+    <section class="w-full h-auto overflow-hidden bg-blue-100">
+      <div class="grid grid-cols-1">
+        <article class="flex flex-col gap-5 px-5 md:pl-0 pt-10 md:pt-0 col-start-1 row-start-1 md:grid">
+          <div class="flex flex-col gap-5 md:col-start-2 md:row-start-1 md:pt-10">
+            <Heading htmlheading="h2" size="large" font="display" type="bold">Anita Enemark</Heading>
+            <Heading htmlheading="h3" size="small" font="display" type="normal">(Soldaterhjemassisten på KFUMs Soldaterhjem Aalborg)</Heading>
+
+            <Text font="body" type="normal">mail: Anita@kfums-soldaterhjem.dk</Text>
+            <Text font="body" type="normal">Tlf: 29 25 04 87</Text>
+            <Button color="orange" size="small" blink="#">Kontakt</Button>
+          </div>
+          <div class="w-90 md:w-150 h-auto relative -bottom-15 md:-bottom-20 md:col-start-1 md:row-start-1">
+            <img src="/imggggg/anita.webp" alt="" />
+          </div>
+        </article>
+        <div class="grid grid-cols-1 grid-rows-1 col-start-1 row-start-2">
+          <div class="bg-orange-100 z-10 -skew-y-6 w-full h-full col-start-1 row-start-2 lg:-skew-y-3 relative -bottom-5 md:-bottom-10"></div>
+          <article class="flex flex-col gap-5 px-5 md:pr-0 pt-20 col-start-1 row-start-2 z-20 md:grid">
+            <div class="flex flex-col gap-5 md:col-start-1 md:row-start-1 md:m-auto">
+              <Heading htmlheading="h2" size="large" font="display" type="bold">Cathrine Fenneberg</Heading>
+
+              <Heading htmlheading="h3" size="small" font="display" type="normal">(Bestyrelsesmedlem i Veteran Oasen Kaas og hovedansvarlig for sommerlejr)</Heading>
+              <Text font="body" type="normal">mail: Cathrinefenneberg@outlook.dk</Text>
+              <Text font="body" type="normal">Tlf: 61 73 11 48</Text>
+              <Button color="orange" size="small" blink="#">Kontakt</Button>
+            </div>
+            <div class="w-90 md:w-150 h-auto relative m-auto mr-0 md:col-start-2 md:row-start-1">
+              <img src="/imggggg/cathrine.webp" alt="" />
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="samarbejde" class="md:grid grid-cols-2 max-w-7xl my-30 m-auto opacity-0 transition-opacity duration-700">
+      <article>
+        <div class="mt-5 ml-5 max-w-3xl space-y-4 lg:mt-0">
+          <Heading htmlheading="h1" size="large" font="display" class="text-white">Vores samarbejde</Heading>
+          <Text>Sommerlejren bliver til i et varmt samarbejde mellem KFUM’s Soldatermission, VeteranOasen og en gruppe engagerede frivillige, der alle brænder for at skabe et trygt fristed for veteraner og deres familier.</Text>
+          <Text>Vi gør det, fordi vi ved, hvor meget et pusterum kan betyde. Et sted, hvor man kan trække vejret, finde ro og være sammen med andre, der forstår – uden at skulle forklare noget.</Text>
+          <Text>KFUM bidrager med hjemlige rammer og mange års erfaring, mens VeteranOasen bringer hjerte, fællesskab og indsigt fra veteraner selv.</Text>
+          <Text>Frivillige binder det hele sammen med nærvær, omsorg og praktisk hjælp. Sammen skaber vi nogle dage, hvor I kan slappe af, være jer selv og mærke, at I ikke står alene.</Text>
+          <Button color="blue" size="medium" blink="https://kfums-soldatermission.dk/">KFUM</Button>
+          <Button color="blue" size="medium" blink="https://veteranoasen.myshopify.com/">Veteran Oasen</Button>
+        </div>
+      </article>
+      <div class="m-auto p-5 lg:w-120 ">
+        <img src="/imggggg/organisations.svg" alt="organisations" />
+      </div>
+    </section>
+
+    <section class="text-white py-20 m-auto space-y-8">
+      <div class="h-auto grid grid-cols-1">
+        <div class="bg-blue-700 skew-y-4 w-full h-full col-start-1 row-start-1 lg:skew-y-3"></div>
+        <article id="mission-article" class="px-5 py-20 md:px-10 md:py-20 col-start-1 row-start-1 z-5 flex flex-col md:grid md:grid-cols-3 gap-10 md:gap-5 text-center max-w-7xl mx-auto">
+          <div class="col-span-1 md:col-span-3 fade-down-mission">
+            <Heading htmlheading="h2" size="medium" font="display">Vores mission</Heading>
+            <Text class="mb-10 max-w-3xl mx-auto">Vores fællesmål er enkel:</Text>
+          </div>
+          <div class="col-start-1 row-start-2 fade-down-mission">
+            <img src="/illust/chilling-in-blob.svg" alt="chilling in blob" />
+            <Text class="max-w-xs mx-auto">At give veteraner og pårørende et fristed, hvor man kan slappe af og være sig selv</Text>
+          </div>
+          <div class="md:mt-20 col-start-2 row-start-2 fade-down-mission">
+            <img src="/illust/highfive-blue.svg" alt="highfive blue men" />
+            <Text class="max-w-xs mx-auto">At skabe fællesskab med andre, der forstår — uden krav og uden forklaringer</Text>
+          </div>
+          <div class="md:mt-40 col-start-3 row-start-2 fade-down-mission">
+            <img src="/illust/kid-on-shoulders.svg" alt="kid on dads shoulder" />
+            <Text class="max-w-xs mx-auto">At støtte både veteranen og familien i hverdagen, gennem nærvær, omsorg og praktisk hjælp</Text>
+          </div>
+          <div class="max-w-7xl m-auto mt-10 md:ml-0 col-start-1 row-start-3 col-span-2 z-5 md:text-left md:m-auto md:mb-5 fade-down-mission">
+            <article class="max-w-150 space-y-8">
+              <Text class="w-[100px] mx-auto"><span class="font-bold">KFUM’s Soldatermission</span> skaber trygge, hjemlige miljøer og har stor erfaring med at støtte soldater og veteraner gennem soldaterhjem og veteranarbejde.</Text>
+              <Text class="w-[100px] mx-auto"><span class="font-bold">VeteranOasen</span> arbejder for et sted, hvor veteraner kan mødes, tale frit, finde ro og være en del af et fællesskab, der bygger på forståelse og ligeværd.</Text>
+            </article>
+          </div>
+        </article>
+      </div>
+    </section>
   </main>
 </MainLayout>
 
 <script>
   /* Import af Motion One bibliotek */
   import { animate, stagger, inView, scroll } from "motion";
+
+  inView("#fadeIn", () => {
+    animate(
+      "#fadeIn",
+      { opacity: [0, 1] },
+      {
+        delay: stagger(0.3, { startDelay: 0.1 }),
+      }
+    );
+  });
+
+
+  inView("#abouttext1", () => {
+    animate(
+      "#abouttext1",
+      { opacity: [0, 1], x: [-100, 0] },
+      {
+        delay: stagger(0.2, { startDelay: 0.1 }),
+      }
+    );
+  });
+
+  inView("#aboutUs", () => {
+    animate(
+      "#aboutUs",
+      { opacity: [0, 1] },
+      { duration: 1, easing: 'ease-out' }
+    );
+  }, { amount: 0.5 });
+
+  inView("#samarbejde", () => {
+    animate(
+      "#samarbejde",
+      { opacity: [0, 1] },
+      { duration: 1, easing: 'ease-out' }
+    );
+    animate(
+      ".fade-down-group",
+      { opacity: [0, 1], y: [-40, 0] },
+      { delay: stagger(0.18, { startDelay: 0.3 }), duration: 0.9, easing: 'ease-out' }
+    );
+  }, { amount: 0.1 });
+
+  inView("#faqticle", () => {
+    animate(
+      "#faqticle",
+      { opacity: [0, 1], x: [-100, 0] },
+      {
+        delay: stagger(0.2, { startDelay: 0.1 }),
+      }
+    );
+  });
+
+  inView("#accordion", () => {
+    animate(
+      "#accordion",
+      { opacity: [0, 1], x: [100, 0] },
+      {
+        delay: stagger(0.1, { startDelay: 1 }),
+      }
+    );
+  });
+
+  inView("#mission-article", () => {
+    animate(
+      "#mission-article .fade-down-mission",
+      { opacity: [0, 1], y: [-40, 0] },
+      { delay: stagger(0.18, { startDelay: 0.3 }), duration: 0.9, easing: 'ease-out' }
+    );
+  }, { amount: 0.1 });
+
+  inView("#kortsection", () => {
+    animate(
+      "#kortsection",
+      { opacity: [0, 1] },
+      {
+        delay: stagger(0.3, { startDelay: 0.2 }),
+      }
+    );
+  });
+
+  inView("#maptext", () => {
+    animate(
+      "#maptext div",
+      { opacity: [0, 1], y: [10, 0] },
+      {
+        delay: stagger(0.1, { startDelay: 0.5 }),
+      }
+    );
+  });
 </script>

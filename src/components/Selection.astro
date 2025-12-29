@@ -1,5 +1,6 @@
 ---
 import Text from "./Text.astro"
+import Button from "./Button.astro"
 
 ---
 
@@ -47,5 +48,6 @@ import Text from "./Text.astro"
         <template x-if="answer === 'andet beløb' && custom">
             <Text font="body" type="bold">du har doneret <span x-text="custom"></span> kr</Text>
         </template>
+        <Button color="orange" size="medium" blink="#">Donér</Button>
     </div>
 </div>

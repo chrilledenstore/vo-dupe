@@ -1,0 +1,32 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+import Text from "../components/Text.astro";
+import Button from "../components/Button.astro";
+---
+
+<MainLayout title="Beskrivelse">
+  <main class="mx-0 bg-neutral-50">
+    <section class="bg-blue-700 w-full px-4 py-40 lg:px-100 place-content-center bg-[url(/imggggg/wavepattern.svg)] bg-cover bg-center">
+      <a href="apply" class="mb-5"><img src="/icons/btnarrow.svg" alt="" width="30" class="-scale-x-100" /></a>
+      <article class="bg-neutral-50 p-10 rounded-lg mx-auto mt-2 flex flex-col gap-5">
+        <div class="mx-auto">
+          <ul class="steps font-body">
+            <li class="step step-secondary">Oplysninger</li>
+            <li class="step step-secondary">Beskrivelse</li>
+            <li class="step">Særlige behov</li>
+            <li class="step">Godkendelse</li>
+          </ul>
+        </div>
+        <div class="font-body flex flex-col gap-4 mt-5 px-4">
+          <Text font="body" type="normal"><div class="text-base">Skriv en kort beskrivelse af hvorfor det lige er dig og din familie der skal deltage (bruges i tilfælde af at vi er nødt til at prioritere mellem ansøgere)</div></Text>
+          <textarea class="textarea rounded-md w-full" placeholder="Skriv tekst her..."></textarea>
+        </div>
+        <div class="flex justify-between mt-5">
+          <Button size="small" color="orange" blink="/stepone" arrowback="yes">Tilbage</Button>
+          <Button size="small" color="orange" blink="/stepthree" arrow="yes">Næste</Button>
+        </div>
+      </article>
+    </section>
+  </main>
+</MainLayout>

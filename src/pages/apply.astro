@@ -5,25 +5,25 @@ import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 import Accordion from "../components/Accordion.astro";
+import SingleAccordion from "../components/SingleAccordion.astro";
 ---
 
 <MainLayout title="Ansøgning">
-  <main class="container mx-auto">
+  <main class="">
     <!-- TOPPEN MED LINKS TIL ORGANISATIONERNE -->
-    <section class="mb-10 mt-35">
-      <div class="mb-10 grid md:grid-cols-2 gap-8 items-center justify-center max-w-7xl mx-auto">
-        <div>
+    <section class="my-10 mx-5">
+      <div class="grid md:grid-cols-2 gap-8 items-center justify-center max-w-6xl mx-auto">
+        <div class="my-auto">
           <div class="mb-5">
             <div class="mb-5">
               <Heading htmlheading="h2" size="large" font="display">Et pusterum for hele familien <br /> – fyldt med hygge, aktiviteter og trygge ramme</Heading>
             </div>
             <Text font="body" type="regular">Kom med på en sommerlejr skabt til veteranfamilier – med plads til både ro, nærvær og gode oplevelser</Text>
           </div>
-          <div class="mb-5">
-            <Button color="blue" size="medium" blink="#">Soldatermission</Button>
-            <Button color="blue" size="medium" blink="#">Veteran Oasen</Button>
+          <div class="mb-10">
+            <Button color="orange" size="medium" blink="/stepone">Ansøg</Button>
           </div>
-          <div class="relative flex">
+          <div class="relative flex items-center gap-2 mb-20">
             <span class="flex items-center">
               <Text font="body" type="bold">4.2</Text>
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-orange-400 ml-1" viewBox="0 0 20 20" fill="currentColor"
@@ -35,51 +35,65 @@ import Accordion from "../components/Accordion.astro";
             <div class="w-px h-6 bg-gray-300 mx-2"></div>
             <Text font="body" type="bold">125 anmeldelser</Text>
             <div class="w-px h-6 bg-gray-300 mx-2"></div>
+            <a href="https://www.facebook.com/groups/VeteranOasen/" target="_blank" rel="noopener noreferrer">
+              <img src="/imggggg/facebook-some.svg" alt="facebook social media" class="w-12 h-12 transition-transform duration-200 hover:scale-110 hover:brightness-90 cursor-pointer" />
+            </a>
+            <a href="https://x.com/oasen" target="_blank" rel="noopener noreferrer">
+              <img src="/imggggg/twitter-some.svg" alt="twitter social media" class="w-12 h-12 ml-2 transition-transform duration-200 hover:scale-110 hover:brightness-90 cursor-pointer" />
+            </a>
           </div>
         </div>
-        <div class="relative w-full flex justify-center">
-          <div class="relative w-[450px] md:w-[700px] h-auto">
-            <img src="/imggggg/blobinator.svg" alt="bg-blobinator" class="w-full h-auto md:w-[700px]" />
-            <img src="/imggggg/legolego.webp" alt="Image 1" class="absolute top-3 md:top-0 left-[15%] w-40 h-40 md:w-56 md:h-56 rounded-lg object-cover" />
-            <img src="/imggggg/beepboop.webp" alt="Image 2" class="absolute top-20 right-[10%] md:right-[9%] w-40 h-40 md:w-56 md:h-56 rounded-lg object-cover" />
-            <img src="/imggggg/beepboop.webp" alt="Image 3" class="absolute bottom-2 md:bottom-5 left-[15%] w-40 h-40 md:w-56 md:h-56 rounded-lg object-cover" />
-          </div>
+        <div class="relative w-full flex flex-col gap-8 justify-center md:hidden">
+          <!-- Mobile: Simple stacked grid -->
+            <img src="/imggggg/legolego.webp" alt="Image 1" class="rounded-lg object-cover w-full h-40 z-10 col-start-1 row-start-1" />
+            <img src="/imggggg/beepboop.webp" alt="Image 2" class="rounded-lg object-cover w-full h-40 z-10 col-start-1 row-start-2" />
+            <img src="/imggggg/kidswithdads.webp" alt="Image 3" class="rounded-lg object-cover w-full h-40 z-10 col-start-1 row-start-3" />
+        </div>
+          <!-- Desktop: Absolute bento layout -->
+        <div class="hidden lg:block relative w-[700px] h-[700px] lg:flex md:flex-wrap">
+            <img src="/imggggg/blobinator.svg" alt="bg-blobinator" class="w-full h-auto md:w-[750px]" />
+            <img id="lego-fadein" src="/imggggg/legolego.webp" alt="Image 1" class="absolute top-10 left-[23%] w-56 h-65 rounded-lg object-cover opacity-0" />
+            <img id="beepboop-fadein" src="/imggggg/beepboop.webp" alt="Image 2" class="absolute top-45 right-[11%] w-56 h-65 rounded-lg object-cover opacity-0" />
+            <img id="kidswithdads-fadein" src="/imggggg/kidswithdads.webp" alt="Image 3" class="absolute bottom-40 left-[9%] w-80 h-56 rounded-lg object-cover opacity-0" />
+        </div>
+
         </div>
       </div>
     </section>
 
     <!-- MIDTEN MED INFO OM ANSØGNING -->
 
-    <section class="bg-blue-700 text-white text-center mb-20">
-      <div class="container mx-auto p-8">
-        <Heading htmlheading="h2" size="large" font="display">Klar til at ansøge?</Heading>
-        <Heading htmlheading="h3" size="medium" font="display">Når du tilmelder dig, skal du oplyse:</Heading>
+    <section class="bg-blue-700 text-white text-center w-full mb-20 overflow-hidden skew-y-4">
+      <div class="-skew-y-4">
+          <div class="container mx-auto p-20">
+            <Heading htmlheading="h3" size="medium" font="display">Når du tilmelder dig, skal du oplyse:</Heading>
+          </div>
+          <div id="apply-info-row" class="md:flex md:mb-20 max-w-7xl mx-auto gap-20">
+            <div class="container mx-auto mb-20 md:mb-0 fade-down-info">
+              <img src="/illust/people.svg" alt="people" class="w-32 mx-auto mb-6" />
+              <Text>Antal deltagere (med alder)</Text>
+            </div>
+            <div class="container mx-auto mb-20 md:mb-0 fade-down-info">
+              <img src="/illust/speakbubble.svg" alt="speakbubble" class="w-32 mx-auto mb-6" />
+              <Text>En kort tekst om, hvorfor jeres familie ønsker at deltage </Text>
+            </div>
+            <div class="container mx-auto mb-20 md:mb-0 fade-down-info">
+              <img src="/illust/bus.svg" alt="bus" class="w-32 mx-auto mb-6" />
+              <Text>Behov for afhentning ved Aalborg banegård</Text>
+            </div>
+            <div class="container mx-auto mb-20 md:mb-0 fade-down-info">
+              <img src="/illust/dog.svg" alt="dog" class="w-32 mx-auto mb-6" />
+              <Text>Eventuelle særlige hensyn (høretelfoner, særlige behov, allergener, servicehund mm.)</Text>
+            </div>
+          </div>
+          <div class="pb-20 pt-10">
+            <Button  color="orange" size="large" blink="/stepone">Ansøg nu</Button>
+          </div>
+        </div>
       </div>
-      <div class="md:flex md:mb-20">
-        <div class="container mx-auto p-8">
-          <img src="/imggggg/blobinator.svg" alt="bg-blobinator" class="w-32 h-auto mx-auto mb-6" />
-          <Text>Antal deltagere (med alder)</Text>
-        </div>
-        <div class="container mx-auto p-8">
-          <img src="/imggggg/blobinator.svg" alt="bg-blobinator" class="w-32 h-auto mx-auto mb-6" />
-          <Text>En kort tekst om, hvorfor jeres familie ønsker at deltage </Text>
-        </div>
-        <div class="container mx-auto p-8">
-          <img src="/imggggg/blobinator.svg" alt="bg-blobinator" class="w-32 h-auto mx-auto mb-6" />
-          <Text>Behov for afhentning ved Aalborg banegård</Text>
-        </div>
-
-        <div class="container mx-auto p-8">
-          <img src="/imggggg/blobinator.svg" alt="bg-blobinator" class="w-32 h-auto mx-auto mb-6" />
-          <Text>Eventuelle særlige hensyn (høretelfoner, særlige behov, allergener, servicehund mm.)</Text>
-        </div>
-      </div>
-        <div class="pb-10">
-          <Button  color="orange" size="large" blink="/stepone">Ansøg nu</Button>
-        </div>
     </section>
 
-    <section class="grid md:grid-cols-2">
+    <section class="grid md:grid-cols-2 max-w-7xl mx-auto pl-5">
       <div class="mt-7">
         <Heading htmlheading="h2" size="medium" font="display" type="bold">Ofte stillede spørgsmål</Heading>
         <div class="my-5">
@@ -91,7 +105,18 @@ import Accordion from "../components/Accordion.astro";
         </div>
       </div>
 
-      <Accordion />
+      <div id="faq-accordion-list" class="mb-20">
+        <div class="fade-down-accordion"><SingleAccordion title="Hvem kan deltage i sommerlejren?" content="Sommerlejren er for veteraner, deres partner og eventuelle børn. Du behøver ikke at være tilknyttet en bestemt organisation – alle veteraner er velkomne." /></div>
+        <div class="fade-down-accordion"><SingleAccordion title="Koster det noget at deltage?" content="Nej. Sommerlejren er gratis, og både overnatning, aktiviteter og måltider er inkluderet. Det eneste du skal sørge for er transporten." /></div>
+        <div class="fade-down-accordion"><SingleAccordion title="Hvordan tilmelder jeg mig?" content="Tilmeldingen foregår via vores online formular. Når du har udfyldt den, modtager du en bekræftelse og yderligere information." /></div>
+        <div class="fade-down-accordion"><SingleAccordion title="Kan jeg komme alene uden familie?" content="Ja. Nogle veteraner deltager alene, og der er plads til både fællesskab og ro, afhængigt af hvad du har brug for. Det er en vurderingssag ud fra ansøgningerne hvem der bliver prioriteret, men alle er velkomne alene eller sammen." /></div>
+        <div class="fade-down-accordion"><SingleAccordion title="Er der særlige hensyn ift. PTSD eller andre udfordringer?" content="Ja. Vi forsøger altid at skabe trygge rammer med mulighed for pauser, rolige områder og fleksible aktiviteter. Man har mulighed for at trække sig på værelset eller evt. få mad ned på værelset hvis man har behov for dette. Vi sørger for aktiviteter for børn så forældre også kan med ro i sindet sende børnene afsted til hygge og aktiviter i trygge rammer og få en velfortjent pause eller pusterum. Du er velkommen til at kontakte os på mail, hvis du har særlige behov." /></div>
+        <div class="fade-down-accordion"><SingleAccordion title="Hvordan foregår overnatningen?" content="Du får tildelt et værelse/rum (afhængigt af årets lokation). Vi prioriterer ro og privatliv, og familier bor som regel samlet, dog er er mulighed for at veteraner får eget værelse efter behov." /></div>
+        <div class="fade-down-accordion"><SingleAccordion title="Hvordan er dagene planlagt?" content="Der er en planlagt dagsstruktur med aktiviteter, men alt er frivilligt. Du deltager selvfølgeligkun i det, der føles rigtigt for dig." /></div>
+        <div class="fade-down-accordion"><SingleAccordion title="Kan jeg forlade lejren?" content="Selvfølgelig. Du kan altid trække dig tilbage eller tage en pause. Frivillige står klar til støtte – helt på dine præmisser. Du er også muligt at planlægge egen udflugt, hvis dette ønskes gives der besked om dette." /></div>
+        <div class="fade-down-accordion"><SingleAccordion title="Hvad med mad og særlige kostbehov?" content="Alle måltider er inkluderet, og vi tager hensyn til allergier og særlige ønsker, hvis du giver besked ved tilmelding." /></div>
+        <div class="fade-down-accordion"><SingleAccordion title="Kan jeg tage min servicehund eller kæledyr med?" content="Servicehunde er altid velkomne og er tilladt indenfor. Almindelige kæledyr er ikke tilladt inde på kursuscenteret, men kan være i “hundehotellet” og få lov at komme indenfor til overnatning – kontakt os gerne for afklaring." /></div>
+      </div>
     </section>
   </main>
 </MainLayout>
@@ -99,4 +124,44 @@ import Accordion from "../components/Accordion.astro";
 <script>
   /* Import af Motion One bibliotek */
   import { animate, stagger, inView, scroll } from "motion";
+
+  inView("#lego-fadein", () => {
+    animate(
+      "#lego-fadein",
+      { opacity: [0, 1], x: [-80, 0] },
+      { duration: 0.5, easing: 'ease-out' }
+    );
+  }, { amount: 0.1 });
+
+  inView("#beepboop-fadein", () => {
+    animate(
+      "#beepboop-fadein",
+      { opacity: [0, 1], x: [80, 0] },
+      { duration: 1, delay: 0.3, easing: 'ease-out' }
+    );
+  }, { amount: 0.2 });
+
+  inView("#kidswithdads-fadein", () => {
+    animate(
+      "#kidswithdads-fadein",
+      { opacity: [0, 1], x: [-80, 0] },
+      { duration: 1, delay: 0.7, easing: 'ease-out' }
+    );
+  }, { amount: 0.2 });
+
+  inView("#apply-info-row", () => {
+    animate(
+      "#apply-info-row .fade-down-info",
+      { opacity: [0, 1], y: [-40, 0] },
+      { delay: stagger(0.18, { startDelay: 0.2 }), duration: 0.9, easing: 'ease-out' }
+    );
+  }, { amount: 0.2 });
+
+  inView("#faq-accordion-list", () => {
+    animate(
+      "#faq-accordion-list .fade-down-accordion",
+      { opacity: [0, 1], y: [-40, 0] },
+      { delay: stagger(0.09, { startDelay: 0.1 }), duration: 0.5, easing: 'ease-out' }
+    );
+  }, { amount: 0.2 });
 </script>

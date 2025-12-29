@@ -12,12 +12,12 @@ import VirksomhedStoet from "../components/VirksomhedStoet.astro";
   <main class="mx-auto">
 
     <!-- START OF INTRO -->
-    <section class="mb-10 mt-10 grid md:grid-cols-2 gap-10 items-center justify-center max-w-6xl mx-auto overflow-hidden md:overflow-visible p-5">
+    <section id="intro" class="mb-10 mt-10 grid md:grid-cols-2 gap-10 items-center justify-center max-w-6xl mx-auto overflow-hidden md:overflow-visible p-5">
      <div>
         <div class="space-y-4">
           <Heading htmlheading="h1" size="large" font="display">STØT ET GODT FORMÅL</Heading>
           <Heading htmlheading="h2" size="medium" font="display">Vil du gøre en forskel for veteraner og deres pårørende?</Heading>
-          <Text>Vil du gerne støtte veteraner på tværs af landet, så kig her. lorem ipsum Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vestibulum quam eget diam facilisis, non tincidunt augue faucibus. Mauris semper ligula quis congue iaculis. <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vestibulfcwih weihowhifoe.</Text>
+          <Text>Vil du gerne støtte veteraner på tværs af landet, så kig her. Både KFUM Soldatermission og Veteran Oasen gør begge en kæmpe indsats for at hjælpe og støtte veteraner i dagligdagen. De skaber begge fælleskaber, aktiviteter og væresteder for veteraner og deres pårørende hvor de kan blive mødt med respekt og forståelse. Hvis du vil læse mere om den enkelte organisation så tryk på nedestående knapper.</Text>
         </div>
         <div class="mt-5">
           <Button color="blue" size="medium" blink="https://kfums-soldatermission.dk/">Soldatermission</Button>
@@ -34,22 +34,22 @@ import VirksomhedStoet from "../components/VirksomhedStoet.astro";
     <!-- BENTO GRID START-->
     <section class="my-20 p-5">
       <div class="md:grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[180px] md:auto-rows-[220px] max-w-7xl mx-auto">
-        <div class="bg-orange-800 text-white rounded-xl shadow flex flex-col items-start p-6 relative overflow-hidden md:row-span-2 md:col-span-1 mb-4 md:mb-0 min-h-[450px] md:min-h-0">
+        <div id="#box1" class="bg-orange-800 text-white rounded-xl shadow flex flex-col items-start p-6 relative overflow-hidden md:row-span-2 md:col-span-1 mb-4 md:mb-0 min-h-[450px] md:min-h-0 animate-fade-down animate-delay-200 opacity-0">
           <Heading htmlheading="h2" size="medium" font="display">HVORFOR <br> SKAL DU <br>STØTTE <br>OS?</Heading>
           <img src="/imggggg/highfive-brown.svg" alt="High Five" class="absolute bottom-0 left-1/2 -translate-x-1/2 w-120 h-auto block md:w-80" />
         </div>
-        <div class="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible pb-2 md:pb-0 col-span-1 md:col-span-3">
-          <div class="bg-blue-200 rounded-xl shadow flex flex-col items-start justify-start p-7 gap-2 min-w-[260px] md:min-w-0">
+        <div class="boxdrop flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible pb-2 md:pb-0 col-span-1 md:col-span-3">
+          <div class="bg-blue-200 rounded-xl shadow flex flex-col items-start justify-start p-7 gap-2 min-w-[260px] md:min-w-0 opacity-0">
             <Text type="bold">Vores mission</Text>
             <Text>Vi kæmper aktivt for at hjælpe, støtte og skabe fællesskaber for veteraner og deres pårørende.</Text>
           </div>
-          <div class="bg-blue-700 text-white rounded-xl shadow flex flex-col items-start justify-start p-7 gap-2 min-w-[260px] md:min-w-0">
+          <div class="bg-blue-700 text-white rounded-xl shadow flex flex-col items-start justify-start p-7 gap-2 min-w-[260px] md:min-w-0 opacity-0">
             <Text type="bold">Et trygt miljø</Text>
             <Text>Sammen skaber vi frirum for veteraner og pårørende, hvor man bliver mødt med forståelse og respekt.</Text>
           </div>
-          <div class="bg-orange-200 rounded-xl shadow flex flex-col items-start justify-start p-7 gap-2 min-w-[260px] md:min-w-0">
+          <div class="bg-orange-200 rounded-xl shadow flex flex-col items-start justify-start p-7 gap-2 min-w-[260px] md:min-w-0 opacity-0">
             <Text type="bold">Et fællesskab, der forstår</Text>
-            <Text>Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit.</Text>
+            <Text>Vi skaber fælleskaber hvor der er plads til alle. Man ikke behøver forklare sig selv, man kan bare være.</Text>
           </div>
         </div>
         <div class="flex items-center justify-center col-span-1 hidden md:col-span-3 mt-4 md:mt-0 md:block">
@@ -63,15 +63,15 @@ import VirksomhedStoet from "../components/VirksomhedStoet.astro";
     <section class=" grid grid-cols-1 md:grid-cols-2 items-stretch justify-center">
       <div class="grid grid-cols-1 grid-rows-1 bg-blue-50">
         <div class="bg-blue-700 bg-[url('/imggggg/wavepattern.svg')] bg-no-repeat bg-bottom bg-cover col-start-1 row-start-1 py-20 skew-y-2 md:-skew-x-12  md:skew-y-0 relative md:-left-20 md:w-[110%]"></div>
-        <div class="z-5 w-full md:p-20 space-y-10 col-start-1 row-start-1 text-white p-10 flex flex-col h-full">
+        <div id="donation" class=" z-5 w-full md:p-20 space-y-10 col-start-1 row-start-1 text-white p-10 flex flex-col h-full">
           <Heading htmlheading="h1" size="large" font="display">Giv en donation til Veteranerne </Heading>
           <Heading htmlheading="h2" size="medium" font="display">Når du støtter Veteran Oasens arbejde, gør du en forskel for veteraner og deres pårørende. Du gør en forskel for dem som har kæmpet for fædrelandet, Folk som tit kan være socialt udsatte, psykisk syge og ensomme.
         </div>
       </div>
 
-      <div class="flex flex-col justify-center items-center bg-blue-50 min-h-[400px]">
+      <div class="flex flex-col justify-center text-center bg-blue-50 min-h-[250px]">
         <Selection></Selection>
-        <Button color="orange" size="medium" blink="#">Donér</Button>
+
       </div>
     </section>
     <!-- DONATION SECTION END -->
@@ -84,11 +84,11 @@ import VirksomhedStoet from "../components/VirksomhedStoet.astro";
           <Heading htmlheading="h2" size="medium">Støttemuligheder for virksomheder</Heading>
           <Text>Vil du som virksomhed eller lign., gerne støtte har du følgende muligheder:</Text>
         </div>
-        <article class="flex flex-row flex-wrap justify-center items-center gap-5 max-w-6xl w-full overflow-x-auto pb-2 px-2">
-          <VirksomhedStoet class="flex-shrink-0 flex-1 my-3 min-w-[280px] md:min-w-[350px] max-w-xs mx-auto" variant="primary" pack="Bronze-pakke" price="1000 DKK" underline="1000 kr" showBadge={false} />
-          <VirksomhedStoet class="flex-shrink-0 flex-1 my-3 min-w-[280px] md:min-w-[350px] max-w-xs mx-auto" variant="secondary" pack="Sølv-pakke" price="2000 DKK" underline="2000 kr" showBadge={true} />
-          <VirksomhedStoet class="flex-shrink-0 flex-1 my-3 min-w-[280px] md:min-w-[350px] max-w-xs mx-auto" variant="primary" pack="Guld-pakke" price="3000 DKK" underline="3000 kr" showBadge={false} />
-        </article>
+        <div class="flex flex-row flex-wrap justify-center items-center gap-5 max-w-6xl w-full h-auto pb-2 px-2">
+          <VirksomhedStoet id="bronze-pakke" class="virksomhedstoet-card opacity-0 flex-shrink-0 flex-1 my-3 min-w-[280px] md:min-w-[350px] max-w-xs mx-auto" variant="primary" pack="Bronze-pakke" price="1000 DKK" underline="1000 kr" showBadge={false} />
+          <VirksomhedStoet id="sølv-pakke" class="virksomhedstoet-card opacity-0 flex-shrink-0 flex-1 my-3 min-w-[280px] md:min-w-[350px] max-w-xs mx-auto" variant="secondary" pack="Sølv-pakke" price="2000 DKK" underline="2000 kr" showBadge={true} />
+          <VirksomhedStoet id="guld-pakke" class="virksomhedstoet-card opacity-0 flex-shrink-0 flex-1 my-3 min-w-[280px] md:min-w-[350px] max-w-xs mx-auto" variant="primary" pack="Guld-pakke" price="3000 DKK" underline="3000 kr" showBadge={false} />
+        </div>
       </div>
     </section>
     <!-- SUPPORT OPTIONS FOR COMPANIES END -->
@@ -99,4 +99,117 @@ import VirksomhedStoet from "../components/VirksomhedStoet.astro";
 <script>
   /* Import af Motion One bibliotek */
   import { animate, stagger, inView, scroll } from "motion";
+
+  inView("#intro", () => {
+    animate(
+      "#intro",
+      { opacity: [0, 1] },
+      {
+        delay: stagger(0.3, { startDelay: 0.5 }),
+      }
+    );
+  });
+
+    inView("#donation", () => {
+    animate(
+      "#donation",
+      { opacity: [0, 1] },
+      {
+        delay: stagger(0.3, { startDelay: 0.5 }),
+      }
+    );
+  });
+  
+  inView(".virksomhedstoet-card", () => {
+    animate(
+      ".virksomhedstoet-card",
+      { opacity: [0, 1], y: [40, 0] },
+      {
+        delay: stagger(0.2, { startDelay: 0.2 }),
+        duration: 0.8,
+        easing: "ease-out"
+      }
+    );
+  });
+
+  inView(".aboutimg", () => {
+    animate(
+      ".aboutimg",
+      { opacity: [0, 1] },
+      {
+        delay: stagger(0.2, { startDelay: 0.5 }),
+      }
+    );
+  });
+
+  inView("#box1", () => {
+    animate(
+      "#box1",
+      { opacity: [0, 1], x: [-100, 0] },
+      {
+        delay: stagger(0.2, { startDelay: 0.1 }),
+      }
+    );
+  });
+
+  inView("#box2", () => {
+    animate(
+      "#box2",
+      { opacity: [0, 1], x: [100, 0] },
+      {
+        delay: stagger(0.1, { startDelay: 0.2 }),
+      }
+    );
+  });
+
+  inView("#faqticle", () => {
+    animate(
+      "#faqticle",
+      { opacity: [0, 1], x: [-100, 0] },
+      {
+        delay: stagger(0.2, { startDelay: 0.1 }),
+      }
+    );
+  });
+
+  inView("#accordion", () => {
+    animate(
+      "#accordion",
+      { opacity: [0, 1], x: [100, 0] },
+      {
+        delay: stagger(0.1, { startDelay: 1 }),
+      }
+    );
+  });
+
+  inView("#kortsection", () => {
+    animate(
+      "#kortsection",
+      { opacity: [0, 1] },
+      {
+        delay: stagger(0.3, { startDelay: 0.2 }),
+      }
+    );
+  });
+
+  inView(".boxdrop", () => {
+    animate(
+      ".boxdrop div",
+      { opacity: [0, 1], y: [0, 10] },
+      {
+        delay: stagger(0.2, { startDelay: 0.5 }),
+      }
+    );
+  });
+
+    inView(".", () => {
+    animate(
+      ".textdrop",
+      { opacity: [0, 1], y: [0, 10] },
+      {
+        delay: stagger(0.1, { startDelay: 0.5 }),
+      }
+    );
+  });
 </script>
+

@@ -1,0 +1,53 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Link from "../components/Link.astro";
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+import Button from "../components/Button.astro";
+---
+
+<MainLayout title="Særlige behov">
+  <main class="mx-0 bg-neutral-50">
+    <section class="bg-blue-700 w-full px-4 py-40 lg:px-100 place-content-center bg-[url(/imggggg/wavepattern.svg)] bg-cover bg-center">
+      <a href="apply" class="mb-5"><img src="/icons/btnarrow.svg" alt="" width="30" class="-scale-x-100" /></a>
+      <article class="bg-neutral-50 p-10 rounded-lg mx-auto mt-2 flex flex-col gap-5">
+        <div class="mx-auto">
+          <ul class="steps font-body">
+            <li class="step step-secondary">Oplysninger</li>
+            <li class="step step-secondary">Beskrivelse</li>
+            <li class="step step-secondary">Særlige behov</li>
+            <li class="step step-secondary">Godkendelse</li>
+          </ul>
+        </div>
+        <div class="font-body flex flex-col gap-4 mt-5 px-4">
+          <Heading htmlheading="h2" font="display" size="medium" type="bold">Kontaktoplysninger på ansøger</Heading>
+          <div class="flex flex-col gap-2 mt-5">
+            <label for="name">Fulde navn</label>
+            <input id="name" type="text" class="input rounded-md" placeholder="Skriv dit navn her..." />
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label for="name">Mail adresse</label>
+            <input id="name" type="text" class="input rounded-md" placeholder="Skriv din mail her" />
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label for="name">Telefon</label>
+            <input id="name" type="text" class="input rounded-md" placeholder="Skriv dit nummer her..." />
+          </div>
+
+          <Text font="body" type="normal"><div class="text-base">Ved indselsense af din ansøgning modtager du en bekræftelsesmail <br /> (typisk indenfor et par dage)</div></Text>
+          <div class="flex flex-row gap-1 mt-10">
+            <input type="checkbox" class="checkbox checkbox-secondary" />
+            <Text font="body" type="normal"><div class="text-base">Ved at indsende ansøgningen giver jeg samtykke til, at KFUM’s Soldatermission og VeteranOasen behandler mine personoplysninger i overensstemmelse med GDPR.</div></Text>
+          </div>
+        </div>
+
+        <div class="flex justify-between mt-10">
+          <Button size="small" color="orange" blink="/stepthree" arrowback="yes">Tilbage</Button>
+          <Button size="small" color="orange" blink="/stepfive" arrow="yes">Insend</Button>
+        </div>
+      </article>
+    </section>
+  </main>
+</MainLayout>
