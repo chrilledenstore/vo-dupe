@@ -1,0 +1,35 @@
+---
+const { pack, price, underline, variant = "default", badgeText = "Most Popular", showBadge = true, wave = "no" } = Astro.props;
+import Heading from './Heading.astro';
+import Text from './Text.astro';
+import Button from './Button.astro';
+
+
+const variantClasses = {
+  default: "",
+  primary: "bg-blue-100",
+  secondary: " bg-blue-700 bg-[url('/imggggg/wavepattern.svg')] bg-no-repeat bg-cover text-white",
+};
+
+const waveClasses = {
+  yes: "block",
+  no: "hidden",
+};
+---
+
+
+<div class:list={[variantClasses[variant], "relative flex flex-col text-center rounded-xl p-6 py-15", Astro.props.class ?? ""]}>
+  {showBadge && <span class="badge absolute top-4 left-4 z-10 bg-orange-500 p-1">{badgeText}</span>}
+  <div class:list={[waveClasses[wave], "w-full h-full"]}></div>
+  
+  <div><Heading htmlheading="h3" size="medium" font="sans">{pack}</Heading>
+  <div class="my-4">
+    <Heading htmlheading="h1" size="large" font="display">{price}</Heading>
+  </div>
+  <div class="flex justify-center mt-4">
+    <Button color="orange" size="medium" blink="#">Støt</Button>
+  </div>
+  <hr class="my-6 w-30 mx-auto" />
+  <Text>Støt Veteran Oasen med <span class="underline">{underline}</span> og vær med til at gøre en forskel for veteraner og deres pårørende.</Text>
+  </div>
+</div>

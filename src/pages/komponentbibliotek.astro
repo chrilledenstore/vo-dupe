@@ -9,7 +9,7 @@ import thumbsup from "../assets/images/thumbsup.png";
 ---
 
 <MainLayout title="Titel">
-  <main class="container mx-auto p-4">
+  <main class="container mx-0 p-4">
     <Heading htmlheading="h1" size="large">Komponentbibliotek</Heading>
     <Text stylingclasses="italic">Her kan du finde alle de komponenter, der er brugt i dette projekt.</Text>
     <hr class="my-4" />
@@ -54,16 +54,14 @@ import thumbsup from "../assets/images/thumbsup.png";
     <!-- Slut på Link komponent instanser -->
     <hr class="my-4" />
     <!-- Buttons komponent instanser -->
-    <section>
+    <section class="flex flex-col gap-5">
       <Heading htmlheading="h2" size="medium">Buttons</Heading>
-      <Text><Button>Default knap</Button></Text>
-      <Text><Button variant="primary">Button variant: primary</Button></Text>
-      <Text><Button variant="primary" size="small">Button variant: primary size small</Button></Text>
-      <Text><Button variant="primary" size="medium">Button variant: primary size medium</Button></Text>
-      <Text><Button variant="primary" size="large">Button variant: primary size large</Button></Text>
-      <Text><Button variant="secondary" size="small">Button variant: secondary size small</Button></Text>
-      <Text><Button variant="secondary" size="medium">Button variant: secondary size medium</Button></Text>
-      <Text><Button variant="secondary" size="large">Variant: secondary size large</Button></Text>
+      <Button color="blue" size="small" blink="#">Blå knap</Button>
+      <Button color="blue" size="medium" blink="#">Blå knap</Button>
+      <Button color="blue" size="large" blink="#">Blå knap</Button>
+      <Button color="orange" size="small" blink="#">Blå knap</Button>
+      <Button color="orange" size="medium" blink="#">Blå knap</Button>
+      <Button color="orange" size="large" blink="#">Blå knap</Button>
     </section>
     <!-- Slut på Buttons komponent instanser -->
   </main>

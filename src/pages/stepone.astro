@@ -1,0 +1,27 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+import Button from "../components/Button.astro";
+---
+
+<MainLayout title="Veteranoasen">
+  <main class="mx-0 bg-neutral-50">
+    <section class="bg-blue-700 w-full h-200 place-content-center">
+      <article class="bg-neutral-50 p-10 rounded-mb">
+        <ul class="steps">
+          <li class="step step-secondary">Register</li>
+          <li class="step">Choose plan</li>
+          <li class="step">Purchase</li>
+          <li class="step">Receive Product</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+</MainLayout>
+
+<script>
+  /* Import af Motion One bibliotek */
+  import { animate, stagger, inView, scroll } from "motion";
+</script>

@@ -1,0 +1,17 @@
+---
+import Text from "./Text.astro"
+const { title, content } = Astro.props;
+---
+
+<div x-data="{ open: false }">
+	<button @click="open = !open" class="w-full flex items-center justify-between text-left p-4 font-bold">
+		<Text font="body" type="bold">{title}</Text>
+		<svg :class="open ? 'transform rotate-90 transition-transform' : 'transition-transform'" class="w-5 h-5 ml-2 inline-block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+			<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+		</svg>
+	</button>
+	<hr />
+	<div x-show="open" class="p-4">
+		<Text font="body" type="regular">{content}</Text>
+	</div>
+</div>
